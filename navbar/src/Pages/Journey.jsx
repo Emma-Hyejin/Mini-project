@@ -2,10 +2,24 @@ import React from 'react';
 import '../App.css';
 import './Journey.css';
 import {Icon } from 'react-icons-kit';
+import {minus} from 'react-icons-kit/metrize/minus';
 import {plus} from 'react-icons-kit/metrize/plus';
-
+import {useState} from 'react';
+ 
 
 const Journey = () => {
+    const [up, btnup] = useState(1);
+
+    const btnIncrease = () => {
+        btnup(up + 1);
+    };
+
+    const btnDecrease = () => {
+        if(up > 1){ 
+            btnup(up-1);
+        }
+    }
+
     return(
         <section className="journey__main">
             <div className="journey__container">
@@ -20,9 +34,12 @@ const Journey = () => {
                         </div>
                     </div>
                     <div className="journey__Lists">
-                        <span className="journey__Title">total 1 Day Journey <span className="icon" ><Icon size={24} Icon icon={plus}/></span> </span>
+                        <span className="journey__Title">total {up} Day Journey <span className="icon" >
+                            <Icon size={24} Icon icon={plus} onClick= {btnIncrease}/>
+                            <Icon size={24} Icon icon={minus} onClick= {btnDecrease}/></span> 
+                        </span>
                         <div className="Lists__container">
-                            <h2> Day 1 <span> in Tokyo</span></h2>
+                            <h2> Day {up} <span> in Tokyo</span></h2>
                             <div className="lists">
                                 <div className="list">
                                     <div className="list__time">Morning</div>
