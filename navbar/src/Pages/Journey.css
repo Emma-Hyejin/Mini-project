@@ -1,0 +1,162 @@
+.journey__container{
+    /* border: 1px solid white; */
+    height: 682px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.journey__wrapper{
+    /* border: 1px solid pink; */
+    margin: 20px;
+    text-align: center;
+    /* justify-content: center; */
+}
+
+.journey__wrapper{
+    display:flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content:space-evenly;
+}
+
+.journey__Cities, .journey__Lists {
+    /* border: 1px solid rgb(231, 255, 192); */
+    margin: 20px;
+    width: 350px;
+    height: 600px;
+    backdrop-filter: blur(5px);  
+    box-shadow: 2px 1px 3px 2px rgba(5, 0, 0, 0.359);
+}
+
+.journey__Cities{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+.journey__Cities >h3{
+    color: white;
+    font-size: 1.5rem;
+    font-weight:bold;
+    text-align: left;
+    padding-left: 30px;
+    margin-top: 20px;
+}
+
+.journey__City{
+    /* border: 1px dotted palegreen; */
+    /* display: flex;
+    flex-direction: row; */
+    width: 300px;
+    min-height: 100px;
+    margin: 10px 25px;
+}
+
+.journey__City:hover{
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    /* width: 305px;
+    height: 105px; */
+    transform:scale(1.013);
+    transition: transform .5s;
+    cursor:pointer;
+}
+
+.city_name{
+    color: white;
+    backdrop-filter: blur(10px);  
+    background-color:rgb(0, 0, 0, 0.6);
+    padding: 5px;
+    box-shadow: 2px 0px 3px -0 rgba(5, 0, 0, 0.359);
+}
+
+.tokyo{
+    background-image:url('../pic/tokyo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.nagano{
+    background-image:url('../pic/nagano.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.journey__Lists{
+    display: flex;
+    flex-direction: column;
+}
+
+.journey__Title{
+    color: white;
+    font-size: 1.5rem;
+    font-weight:bold;
+    text-align: left;
+    padding-left: 10px;
+    margin-top: 20px;
+
+}
+
+.icon{
+    margin-left: 10px;
+}
+
+.Lists__container{
+    display: flex;
+    flex-direction: column;
+}
+
+.Lists__container > h2{
+ text-align: left;
+ margin-left: 10px;
+ /* margin-top: 5px; */
+ color: #d8d8d8;
+ font-size: 1.2rem;
+}
+
+h2 > span{
+    color: #acaaaa;
+    font-size: 0.8rem;
+    margin-left: 15px;
+}
+
+
+.lists{
+    /* border: 1px solid chartreuse; */
+    margin: 20px 0;
+    height: 450px;
+    padding: 10px 0;
+
+}
+
+.list{
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    backdrop-filter:blur(10px);
+    box-shadow: 2px 0px 3px -0 rgba(5, 0, 0, 0.359);
+    background-color:rgb(0, 0, 0, 0.6);
+    border-radius: 10px;
+    min-height: 80px;
+    margin: auto 5px;
+    /* color: #efefef; */
+}
+
+.list > div{
+    color: #efefef;
+}
+
+.list__time{
+    font-size: 15px;
+    text-align: left;
+    padding: 5px 20px;
+}
+
+.list__plan{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+    padding: 5px 20px;
+}

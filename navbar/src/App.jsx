@@ -3,11 +3,12 @@ import './App.css';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 // import {BrowserRouter} from 'react-router-dom';
 
-import MainInfo from './Pages/MainInfo';
+import Aboutus from './Pages/Aboutus';
 // import Main from './Pages/Main';
 import Community from './Pages/Community';
-import MyPage from './Pages/MyPage';
+import Journey from './Pages/Journey';
 import Navbar from './Navbar';
+import Main from './Main';
 
 
 function App() {
@@ -15,20 +16,18 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <main>
-          <Navbar/>
-          <section className="navbar">
+          <Navbar/> {/*App.css*/}
+          {/* <Main/> */}
+          <section className="navbar_app">
             <Routes>
-              {/* <Route path="/" element={<Main/>}/> */}
-              <Route path="/mainInfo" element={<MainInfo/>}/>
+              <Route path="/" element={<Main/>}/>
+              <Route path="/aboutus" element={<Aboutus/>}/>
+              <Route path="/journey" element={<Journey/>}/>
               <Route path="/community" element={<Community/>}/>
-              <Route path="/mypage" element={<MyPage/>}/>
             </Routes>
           </section>
         </main>
       </div>
-      {/* <div>
-        <p> HEllo</p>
-      </div> */}
     </BrowserRouter>
   );
 }

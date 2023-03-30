@@ -4,12 +4,14 @@ import './App.css';
 
 const Navbar = () => {
     return (
-        <section className="navbar">
-            <div className="navbar__logo">LOGO</div>
+        <section className="navbar__container">
+            <div className="navbar__logo">
+                <Link to='/' className="nav logo">Go TRAVEL</Link>
+            </div>
             <div className="navbar__menu">
-                <Link to="/mainInfo"><span className="nav mainInfo">MainInfo</span></Link>
-                <Link to="/community"><span className="nav community">Community</span></Link>
-                <Link to="/mypage"><span  className="nav mypage">MyPage</span></Link>
+                <Link to="/aboutus"><span className="nav navbar__aboutus">Aboutus</span></Link>
+                <Link to="/journey"><span  className="nav navbar__journey">Journey</span></Link>
+                <Link to="/community"><span className="nav navbar__community">Community</span></Link>
             </div>
         </section>
     );
