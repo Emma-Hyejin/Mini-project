@@ -1,0 +1,10 @@
+.mainInfo__wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 90vh;
+    width: 100vw;
+    align-items: center;
+    background-color: rgba(221, 160, 221, 0.512);
+}
+

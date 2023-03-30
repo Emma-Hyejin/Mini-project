@@ -1,0 +1,45 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing:border-box;
+  font-size: 16px;
+  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+}
+
+main{
+  height: 100vh; 
+  background-color: rgba(127, 255, 212, 0.359);
+}
+
+
+/*Navbar*/
+.navbar{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  border: 3px dotted blue;
+  width: 100%;
+}
+
+.navbar__logo{
+  border: 1px solid pink;
+  margin-right: 50%;
+  padding: 20px;
+}
+
+.navbar__menu{
+  background: yellow;
+  width: 50%;
+  padding: 20px;
+  display: flex;
+  justify-content:space-between;
+}
+
+.nav{
+  border: 3px solid salmon;
+  padding: 10px;
+}
+
+a{
+  text-decoration: none;
+}
