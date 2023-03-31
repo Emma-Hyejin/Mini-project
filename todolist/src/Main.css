@@ -29,7 +29,7 @@
     color: #555;
 }
 
-.under__btn > button{
+.under__btn > button{ /*open*/
     background-color: #ffd9de;
     border: 1px solid #edc9ce;
     padding: 5px 15px;
@@ -46,6 +46,65 @@
     height: 75%;
     padding: 10px;
 }
+
+/*Popup*/
+
+.popup{
+    /* position: fixed; */
+    width: 50%;
+    height: 50%;
+    margin: auto;
+    background-color: #ffffff;
+}
+
+.popup_inner{
+    left: 25%;
+    right: 25%;
+    top: 25%;
+    margin: auto;
+    background: white;
+    position: absolute;
+    border: 1px solid black;
+    padding: 20px;
+}
+
+.popup_inner > h2{
+    /* top: 25%;
+    bottom: 25%; */
+    margin: auto;
+    color: #34495e;
+    font-size: 2rem;
+}
+
+.popup_inputs{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+
+}
+
+.text_list{
+    height: 70px;
+    padding: 5px;
+    margin-bottom: 40px;
+    margin-top: 10px;
+    font-size: 1.3rem;
+}
+
+.close{
+    width: 7rem;
+    height: 2rem;
+    border:none;
+    border-radius: 3px;
+    background-color: black;
+    color: white;
+    font-weight: bolder;
+    outline:none;
+    border-radius: 10px;
+}
+
+
+
 
 /*Footer*/
 .footer{
