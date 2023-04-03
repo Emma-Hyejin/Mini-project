@@ -15,7 +15,7 @@
 }
 
 .content__title > h3{
-    border: 1px solid salmon;
+    /* border: 1px solid salmon; */
     padding-top: 50px;
     padding-bottom: 10px;
     font-size: 2.2rem;
@@ -25,8 +25,11 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;  
-    padding-bottom: 20px;
     color: #555;
+}
+
+.under__date{
+ margin-top: 10px;
 }
 
 .under__btn > button{ /*open*/
@@ -36,6 +39,7 @@
     border-radius:8px;
     font-weight: bold;
     box-shadow: 2px 5px 6px -6px rgba( 0, 0, 0, 0.41);
+    cursor:pointer;
 }
 
 /*Lists*/
@@ -75,6 +79,22 @@
     color: #34495e;
     font-size: 2rem;
 }
+
+.h2_title{
+    display:flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content:space-between;
+}
+
+.close_icon{
+    cursor:pointer;
+}
+
+.close_icon:hover{
+    color:rgb(250, 144, 161);
+}
+
 
 .popup_inputs{
     display: flex;

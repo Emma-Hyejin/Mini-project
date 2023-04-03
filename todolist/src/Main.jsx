@@ -6,6 +6,8 @@ import Footer from './Footer';
 import Sidebar from './Side/Sidebar';
 import Contents from './Component/Contents';
 import {useState} from 'react';
+import {Icon } from 'react-icons-kit';
+import {cross} from 'react-icons-kit/metrize/cross'
 
 
 const Main = ({onButtonclick}) => {
@@ -64,7 +66,10 @@ const Main = ({onButtonclick}) => {
                                 {showPopup ? (
                                     <div className="popup">
                                         <div className="popup_inner">
-                                            <h2>To Do List</h2>
+                                            <div className="h2_title">
+                                                <h2>To Do List</h2>
+                                                <span className="close_"><Icon size={25} icon={cross} className="close_icon" onClick={openClicksubmit}/></span>
+                                            </div>
                                             <div className="popup_inputs">
                                                 <div className="input_date">{parseDate}</div>
                                                 <textarea className="text_list" placeholder='write what will you do'
