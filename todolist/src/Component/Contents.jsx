@@ -1,12 +1,30 @@
 import React from 'react';
 import './Contents.css';
+import SingleList from './SingleList';
+// import { useState } from 'react';
 
-const Content = () => {
+
+
+const Contents = ({data}) => {
     return(
-        <div className="lists">
-            <h3> List 들이 들어갈 부분 입니다. </h3>
+        <div className="lists_container">
+            <ul className="lists">
+                {data.map((e)=>{
+                    return(
+                        <SingleList sendData = {e}/>
+                    )
+                })}
+                
+                {/* {newlists.map((e)=>{
+                    return(
+                    <SingleList key={e.id} content={e.content} date = {e.date} ></SingleList>
+                    // <SingleList/>
+                    // <SingleList onButtonclick={addNewList} key={addNewList.id}/>
+                    )
+                })} */}
+            </ul>
         </div>
     )
 }
 
-export default Content;
+export default Contents;

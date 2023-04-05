@@ -10,7 +10,7 @@ import {Icon } from 'react-icons-kit';
 import {cross} from 'react-icons-kit/metrize/cross'
 
 
-const Main = ({onButtonclick}) => {
+const Main = () => {
     const parseDate = new Date().toLocaleDateString('ko-kr');  // 날짜
     const [showPopup, setShowpopup] = useState(false);         // pop up
     const [newListcontent, setNewListcontent] = useState(''); // 입력 
@@ -33,25 +33,27 @@ const Main = ({onButtonclick}) => {
         togglePopup();
     }
 
+    // const addNewList = []; 계속 빈 배열만..
+
     // 모달 창 안의 ADD List 버튼 클릭 시 발동 함수 
     const closeClicksubmit = () => {
         const newlist={
-            id: lists.length + 1,
+            id: lists.length+1,
             content:newListcontent,
-            date: new Date().toLocaleDateString('ko-kr'),      
+            date: new Date().toLocaleDateString('ko-kr'), 
         }
 
+        
         setLists([...lists, newlist]);  // 입력 받은 것과 기존 lists를 합친다.  - lists에 새로운 값이 닮김. 
-        // newListcontent ='';
         togglePopup();
-        console.log(lists);
-
+        console.log(Array.isArray(lists)); // 배열 맞는디..
     }
+    console.log(lists);
 
-
-    const addNewList = (newlist) => {
-        setLists([...lists, newlist]);
-    }
+    // const addNewList = (newlist) => {
+    //     setLists([...lists, newlist]);
+    // }
+    // const addNewList = [];
 
     return (
         <div className="main__container">
@@ -86,7 +88,8 @@ const Main = ({onButtonclick}) => {
                         </div>
                     </div>
                     <div className="content__lists">
-                        <Contents onButtonclick={addNewList}/>
+                        <Contents data={lists}/> 
+                        {/* 새로 만들어진 배열이 알맞게 넘어간다.  */}
                     </div>
                 </div>
                 <Footer/>
