@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Navbar from './Navbar';
 import Main from './Main';
-import Weather from './Weather';
+import Weather from './Weather/Weather';
 import {Routes, Route} from 'react-router-dom';
 
 function App() {
