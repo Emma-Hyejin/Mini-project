@@ -1,7 +1,7 @@
 import React from 'react';
 import './Contents.css';
 import SingleList from './SingleList';
-// import { useState } from 'react';
+
 
 
 
@@ -14,14 +14,6 @@ const Contents = ({data}) => {
                         <SingleList sendData = {e}/>
                     )
                 })}
-                
-                {/* {newlists.map((e)=>{
-                    return(
-                    <SingleList key={e.id} content={e.content} date = {e.date} ></SingleList>
-                    // <SingleList/>
-                    // <SingleList onButtonclick={addNewList} key={addNewList.id}/>
-                    )
-                })} */}
             </ul>
         </div>
     )

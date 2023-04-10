@@ -95,7 +95,7 @@ const Main = () => {
                 <Footer/>
             </div>
             <div className="main__right">
-                <Sidebar/>
+                <Sidebar data={lists}/>
             </div>
         </div>
     )
