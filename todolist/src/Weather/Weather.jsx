@@ -26,9 +26,21 @@ const Weather = () => {
     }
 
 
+    //selction으로 추가 코드 04/13
+    // let cities = [ 'Seoul', 'Busan' , 'Tokyo', 'Kyoto', 'Nagoya'];
+    const [ci, setCi] = useState([ 'Seoul'])
+
+    const changeCity = (e) =>{
+        // let cities = ['Busan' , 'Tokyo', 'Kyoto', 'Nagoya']
+        setCi(e.target.value)
+    }
+    
+    //..
+
     //날씨 API 불러오기 axios 
-    const city = "Seoul"; 
-    const url = `${api.base}weather?q=${city}&appid=${api.key}`;
+    // let city = "Seoul"; 
+    // const [city, setCity] = useState("Seoul");
+    const url = `${api.base}weather?q=${ci}&appid=${api.key}`;
     const [weather, setWeather] = useState([]);
 
     // [1] axios 사용법 
@@ -50,50 +62,40 @@ const Weather = () => {
             return res.json();
             })
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 setWeather({
-                    id: data.weather[0].id,
+                    icon: data.weather[0].icon,
                     temperature:data.main.temp, //화씨 온도
                     main: data.weather[0].main,// 날씨 표현 Clear
                     loading:false,
                 })
         })
-    }, [] ) //단 한번 실행하기
+    }, [] ); //단 한번 실행하기
 
-    // const ilist = weather.id;
-    // const iconURL = `https://openweathermap.org/img/wn/${ilist}@2x.png`;
-    // const icon = () =>{
-    //     if(weather.id >=200 && weather.id <= 232){
-    //         ilist = '11d';
-    //     }else if(weather.id >= 300 && weather.id <= 321 || weather.id>= 500 && weather.id<=504){
-    //         ilist = '09d'
-    //     }else if (weather.id === 511 || weather.id >= 600 && weather.id <= 622){
-    //         ilist = '13d'
-    //     }else if (weather.id >= 520 && weather.id <= 531){
-    //         ilist = '09d'
-    //     }else if(weather.id >= 700 && weather.id <= 781){
-    //         ilist = '50d'
-    //         return iconURL
-    //     }else if (weather.id === 800){
-    //         ilist = '01d'
-    //     }else if (weather.id >= 801 && weather.id <= 804){
-    //         ilist = '04d'
-    //     }
-    // }
-    
+
+    const iconURL = `https://openweathermap.org/img/wn/${weather.icon}@2x.png`;  
+    let cities = ['Seoul','Busan' , 'Tokyo', 'Kyoto', 'Nagoya']
+
 
 
     return(
         <div className="wth__container">
+            
             <div className="wth__wrapper">
-                <h2> 오늘 떠나고 싶은 {city}</h2>
+            <h2> 오늘 떠나고 싶은 {ci}</h2>
                 <div className="wth__show">
-                    <h2>{dateBuilder(new Date())}</h2>
+                    <p>{dateBuilder(new Date())}</p>
+                    <img className="icon" src={iconURL} alt="new"/>
                     <div className="wth__txt">{(weather.temperature-273.15).toFixed(2)}℃</div>
-                    {/* <div>{weather.temperature}</div> */}
-                    {/* <div className="wth__icon">{icon(iconURL)}</div> */}
-                    <img src={`https://openweathermap.org/img/wn/${weather.id}@2x.png`} alt="new"/>
                     <div className="wth__txt">{weather.main}</div>
+                    <select  className="wth__input" onChange={changeCity}>
+                        {cities.map((e)=> {
+                            // city=e;
+                            return(
+                                <option value={e} >{e}</option>
+                            )
+                        })}
+                    </select>
                 </div>
             </div>
         </div>
