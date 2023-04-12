@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# 조혜진 todolist 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React를 사용해서 To Do List를 구현해보았습니다. 
 
-## Available Scripts
+(1) Main 화면<br>
+<img src="https://user-images.githubusercontent.com/110151638/230899816-38efc35c-ec6b-4b09-b57d-c4a331b86f1a.png"  width="700" height="450">
 
-In the project directory, you can run:
+(2) 모달 창 화면<br>
+<img src="https://user-images.githubusercontent.com/110151638/230901557-47eafd6a-d062-42a6-ac05-21f1de908c84.png"  width="700" height="450">
 
-### `npm start`
+## 구현 기능
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* 모달 창에서 새로운 to do list 입력 시 main 화면에 새 list 추가 
+* 새로운 list 추가 될 때마다 sidebar 의 'Total Task' 증가
+* weatehr open API를 활용하여 각 도시의 현재 날씨 불러오는 기능 구현
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## 기능 구현 시 어려웠던 점 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**+ New Task** 버튼 클릭 시 모달 창 화면 등장하며, 모달 창 안에서 content 입력 시 Main 화면의 list 파트에 추가 되는 기능을 구현하려고 했습니다. 
 
-### `npm run build`
+#### Component 분리 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* 모달창이 있는 **Main component** 
+* list들이 추가 될 **Contents component** 
+* 각 list 를 구현 할 **SingleList component** 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+새로운 데이터 입력 시 -> 모달 창 component -> contents component -> singlelist component 순으로 new list를 props로 전달을 해야 했습니다. Component 단위로 data를 넘기는 것이 익숙하지 않은 상태에 여러개로 쪼개진 Component로 인하여 처음에는 새로운 lsit가 추가된 new lists를 어떻게 보내야 하는지 해맸으나 useState를 이용하여 data를 전달하였습니다. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```JavaScript
+//Main.jsx
+const [ lists , setLists ] = useState([ /*초기 임시 data*/ ])
+// 생략
 
-### `npm run eject`
+<Contents data={lists}>
+```
+```JavaScript
+//Contents.jsx
+const Contents = ({data}) => {
+    return (
+        //생략 
+        {data.map((e)=>{
+            return(
+                <SingleList sendData = {e}>
+            )
+        })}
+    )
+}
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+```JavaScript
+//SingleList.jsx
+const SingleList = ({sendData})=>{
+    return(
+        //생략 Ex.
+        <div className="content">{sendData.content}</div>
+    )
+}
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 구현 예정 기능 : try challenge
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* 입력 한 list의 **수정** 및 **삭제** 기능 구현 
+* **Star** 부분에 CSS animation 효과를 적용한 이모티콘 넣기 
