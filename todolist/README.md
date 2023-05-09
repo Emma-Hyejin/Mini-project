@@ -17,7 +17,7 @@ React를 사용해서 To Do List를 구현해보았습니다.
 
 ## 기능 구현 시 어려웠던 점 
 
-**+ New Task** 버튼 클릭 시 모달 창 화면 등장하며, 모달 창 안에서 content 입력 시 Main 화면의 list 파트에 추가 되는 기능을 구현하려고 했습니다. 
+(1) **+ New Task** 버튼 클릭 시 모달 창 화면 등장하며, 모달 창 안에서 content 입력 시 Main 화면의 list 파트에 추가 되는 기능을 구현하려고 했습니다. 
 
 #### Component 분리 
 
@@ -57,7 +57,6 @@ const SingleList = ({sendData})=>{
     )
 }
 ```
-
 
 
 ## 구현 예정 기능 : try challenge

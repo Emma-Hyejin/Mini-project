@@ -6,9 +6,8 @@ import {Link} from 'react-router-dom';
 
 const Aboutus = () => {
     return(
-        <section className="about__main">
         <div className="about__container">
-            <div className="about__wrapper">
+            <div className=" inner wrapper">
                 <div className="about__ Title">
                     We're your AI guide<br/>Just Click and start your Journey
                 </div>
@@ -30,8 +29,12 @@ const Aboutus = () => {
                     </div>
                 </div>
             </div>
+            <div className="inner">
+                <h1> section 01 </h1>
+            </div>
+            <div className="inner"><h1> section 02 </h1></div>
+            <div className="inner"><h1> section 03 </h1></div>
         </div>
-    </section>
     )
 }
 

@@ -8,15 +8,15 @@ import {useState} from 'react';
  
 
 const Journey = () => {
-    const [up, btnup] = useState(1);
+    const [cnt, btnup] = useState(1);
 
     const btnIncrease = () => {
-        btnup(up + 1);
+        btnup(cnt + 1);
     };
 
     const btnDecrease = () => {
-        if(up > 1){ 
-            btnup(up-1);
+        if(cnt > 1){ 
+            btnup(cnt-1);
         }
     }
 
@@ -34,12 +34,12 @@ const Journey = () => {
                         </div>
                     </div>
                     <div className="journey__Lists">
-                        <span className="journey__Title">total {up} Day Journey <span className="icon" >
+                        <span className="journey__Title">total {cnt} Day Journey <span className="icon" >
                             <Icon size={24} Icon icon={plus} onClick= {btnIncrease}/>
                             <Icon size={24} Icon icon={minus} onClick= {btnDecrease}/></span> 
                         </span>
                         <div className="Lists__container">
-                            <h2> Day {up} <span> in Tokyo</span></h2>
+                            <h2> Day {cnt} <span> in Tokyo</span></h2>
                             <div className="lists">
                                 <div className="list">
                                     <div className="list__time">Morning</div>

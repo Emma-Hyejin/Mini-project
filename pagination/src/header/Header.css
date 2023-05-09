@@ -1,0 +1,37 @@
+.header{
+    width: 100vw;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.header_top{
+    height: 50px;
+    padding-top: 30px;
+    padding-left: 300px;
+}
+
+.header_bottom{
+    background-color: darkcyan;
+    width: 100vw;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.header ul {
+    width: 1000px;
+}
+
+.header_bottom ul li{
+    float: left;
+    width: 25%;
+    list-style: none;
+    text-align: center;
+    /*line-height: 50px*/
+    font-weight: bolder;
+    color: #efefef;
+    cursor:pointer;
+}

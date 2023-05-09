@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.main_container{
+    /* background-color: salmon; */
+    width: 1000px;
+}
+
+.main_container > h1{
+    padding: 20px;
+    /* border-bottom: 2px solid #888; */
+}
+
+.main_indexes{
+    border-top: 2px solid #888;
+    display: flex;
+    flex-direction: row;
+}
+
+.main_indexes {
+    padding: 10px;
+    font-size: 0.8rem;
+    border-bottom: 2px solid #e7e7e7;
+}
+
+.main_indexes .min{
+    width: 200px;
+}
+
+.main_indexes .max{
+    width: 480px
+}
+
+.main_lists{
+    display: flex;
+    flex-direction: row;
+}
