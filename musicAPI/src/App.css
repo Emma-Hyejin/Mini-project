@@ -4,21 +4,6 @@
   box-sizing:border-box;
 }
 
-body{
-  display: flex;
-  justify-content: center;
-  position: relative;
-}
-
-#root{
-  display: flex;
-  flex-direction: row;
-  position:absolute;
-  top: 20%;
-  border: 1px solid salmon;
-  padding: 20px;
-}
-
 
 
 
