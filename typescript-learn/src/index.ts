@@ -4,7 +4,7 @@ enum Color {
   Blue,
 }
 
-function printColor(color: Color): number {
+function printColor(color: Color): void {
   switch (color) {
     case Color.Red:
       console.log(Color.Red);
