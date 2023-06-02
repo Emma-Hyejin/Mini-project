@@ -5,7 +5,7 @@ const Main = () => {
     return (
         <div className="main">
             <div className="main-container">
-                <h1>MAIN</h1>
+                <h1>Spotify Web Play</h1>
             </div>
         </div>
     )

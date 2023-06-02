@@ -1,6 +1,7 @@
 import styled from 'styled-components';
-import {useState} from 'react';
+import {useState, useContext} from 'react';
 import './LoginPage.css';
+import { Firebasecontext } from '../context/FirebaseContext';
 
 const Button = styled.button`
     width: ${ (props) => (props.sso ? "70px" : "200px")};
@@ -24,8 +25,8 @@ const LoginPage = () => {
         id: "",
         pw: "",
     });
-    const [isIdPlaceholder, setIsIdPlaceholder] = useState(true);
-    const [isPwPlaceholder, setIsPlaceholder] = useState(true);
+
+    const {firebase} = useContext(Firebasecontext);
 
     const writeId = (e) => {
         setIsLoginInfo({
@@ -46,19 +47,21 @@ const LoginPage = () => {
         <div className="loginPage"> 
             <div className="login-container">
                 <h2>Login</h2>
-                <form className="login-input">
+                <form className="login-input"
+                    onSubmit={() => alert(isLoginInfo)}
+                    >
                     <input type="text" 
                         placeholder= "Write your ID"
                         value={isLoginInfo.id}
-                        onChange={writeId}>
+                        onChange={writeId}>s
                     </input>
-                    <input type="passworld" 
-                        placeholder={isPwPlaceholder ? "write your Pw" : ""} 
+                    <input type="password" 
+                        placeholder="write your Pw"
                         value={isLoginInfo.pw}
                         onChange={writePw}>
                     </input>
                 </form>
-                <Button>Login</Button>
+                <Button type="submit">Login</Button>
                 <div className="login-sso">
                     <Button sso>Spotify</Button>
                     <Button sso>kakao</Button>
