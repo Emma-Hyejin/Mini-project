@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import {useState, useContext} from 'react';
 import './LoginPage.css';
-import { Firebasecontext } from '../context/FirebaseContext';
+import { FirebaseContext } from '../context/FirebaseContext';
 
 const Button = styled.button`
     width: ${ (props) => (props.sso ? "70px" : "200px")};
@@ -26,7 +26,7 @@ const LoginPage = () => {
         pw: "",
     });
 
-    const {firebase} = useContext(Firebasecontext);
+    const {firebase} = useContext(FirebaseContext);
 
     const writeId = (e) => {
         setIsLoginInfo({
