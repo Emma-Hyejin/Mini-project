@@ -1,17 +1,13 @@
-import React from 'react';
 import './Main.css';
 
 const Main = () => {
 
     return (
-        <>
-            <div className="main-section">
-                <h1>Main</h1>
-                <div id="player">
-                    
-                </div>
+        <div className="main">
+            <div className="main-container">
+                <h1>Spotify Web Play</h1>
             </div>
-        </>
+        </div>
     )
 }
 
